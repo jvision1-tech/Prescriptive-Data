@@ -1,0 +1,27 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: coker-app-dev
+spec:
+  selector:
+    matchLabels:
+      app: coker-app-dev
+  replicas: 4 # tells deployment to run 2 pods matching the template
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app: coker-app-dev
+    spec:
+      containers:
+      - name: coker-dev-app
+        image: jvision1/devops1:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+

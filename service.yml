@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: coker-aap-service
+  labels:
+    app: coker-app-dev
+spec:
+  selector:
+    app: coker-app-dev
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 80
+      #    nodePort: 31200
+      #
