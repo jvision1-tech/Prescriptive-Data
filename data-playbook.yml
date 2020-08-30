@@ -1,0 +1,18 @@
+---
+- hosts: k8s
+  tasks:
+
+
+
+          - name: Deleting coker-app if exist
+            command: kubectl delete deployment coker-app
+            ignore_errors: yes
+          - name: Apply change to my app
+            command: kubectl create -f /opt/kubernetes/coker/deploy.yml
+          - name: Deleting coker-app-service if exist
+            command: kubectl delete service coker-app-service
+            ignore_errors: yes
+          - name: Apply service change to my app
+            command: kubectl create -f /opt/kubernetes/coker/service.yml
+
+
