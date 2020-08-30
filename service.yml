@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: coker-aap-service
+  name: coker-app-service
   labels:
     app: coker-app-dev
 spec:

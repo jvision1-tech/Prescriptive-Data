@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: coker-dev-app
-        image: jvision1/devops1:latest
+        image: jvision1/pdata
         imagePullPolicy: Always
         ports:
         - containerPort: 80
